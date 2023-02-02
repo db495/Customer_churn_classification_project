@@ -53,11 +53,11 @@ After loading up the dataset and doing a brief amount of EDA to understand the f
 
 After the EDA was complete, I wanted to build several different classification models, ranging from simple decision trees to more in depth ensemble methods. To this first I split the data at a 30/70 level between test & train. I then created relevant functions to both perform feature engineering and also create a function to perform the pipeline needed to transform the data for each model. The types of models I evaluated as a baseline were DecisionTree, RandomForest, LogisitcRegression, AdaBoostClassifier, GradientBoostClassifier and XGBoostClassifier. There were a range of results as can be seen below.
 
-![baseline_model_performance](https://github.com/db495/Customer_churn_classification_project/tree/main/images/baseline_mode_performance.png)
+![baseline_model_performance](https://github.com/db495/Customer_churn_classification_project/tree/main/images/baseline_model_performance.png)
 
 From this list we wanted to see if we could improve performance by tuning the hyperparameters, using a GridSearchCV method I decided to only move forward with the DecisionTree, RandomForest & XGBoost options for hypertuning. Then the ROC-AUC curve was plotted out for the best performing model to see how it stands up to the test dataset.
 
-![roc_auc_curve](https://github.com/db495/Customer_churn_classification_project/tree/main/images/roc_auc_curve.png)
+![roc_auc_curve](https://github.com/db495/Customer_churn_classification_project/main/images/roc_auc_curve.png)
 
 Finally I looked to extract which features were the most important in driving customer churn. You can find the results below.
 
