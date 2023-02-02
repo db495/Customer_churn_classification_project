@@ -1,4 +1,4 @@
-# Customer Churn Classification
+# Customer Churn Classification Project
 
 **Author**: [David Boyd](mailto:dboyd580@gmail.com)
 
@@ -42,13 +42,38 @@ This project uses the SyriaTel Kaggle dataset, which can be found in `data.csv` 
 * `customer service calls` - The total number of customer service calls made per account.
 * `churn` - Target feature
 
-## Methods
+## Method
 
+After loading up the dataset and doing a brief amount of EDA to understand the following:
+* What datatypes we were dealing with
+* Were there any categorical variables
+* Were there any null values, if so what columns featured them and of what datatype would they need to be imputed as
+* Were there any categorical variables hidden as numerics
+* Were there any outliers within the dataset
 
+After the EDA was complete, I wanted to build several different classification models, ranging from simple decision trees to more in depth ensemble methods. To this first I split the data at a 30/70 level between test & train. I then created relevant functions to both perform feature engineering and also create a function to perform the pipeline needed to transform the data for each model. The types of models I evaluated as a baseline were DecisionTree, RandomForest, LogisitcRegression, AdaBoostClassifier, GradientBoostClassifier and XGBoostClassifier. There were a range of results as can be seen below.
+
+![baseline_model_performance](https://github.com/db495/Customer_churn_classification_project/tree/main/images/baseline_mode_performance.png)
+
+From this list we wanted to see if we could improve performance by tuning the hyperparameters, using a GridSearchCV method I decided to only move forward with the DecisionTree, RandomForest & XGBoost options for hypertuning. Then the ROC-AUC curve was plotted out for the best performing model to see how it stands up to the test dataset.
+
+![roc_auc_curve](https://github.com/db495/Customer_churn_classification_project/tree/main/images/roc_auc_curve.png)
+
+Finally I looked to extract which features were the most important in driving customer churn. You can find the results below.
 
 ## Evaluation
 
+Once the best model was selected (XGBoost) due to how it performed both on the F1 score and Recall score with the test dataset, it was the least impacted by overfitting. Below you can see both the confusion matrix for that final model and the features which had the biggest impact on predicting whether a customer would churn or not.
 
+![confusion_matrix](https://github.com/db495/Customer_churn_classification_project/tree/main/images/confusion_matrix.png)
+
+![most_imp_features](https://github.com/db495/Customer_churn_classification_project/tree/main/images/most_imp_features.png)
+
+To make sense of the chart above:
+X0 = State
+X1 = Area Code
+X2 = International Plan
+X3 = Voicemail Plan
 
 ## Conclusions
 From the feature importance chart above, we can see the areas that have the biggest influence on customer churn are:
