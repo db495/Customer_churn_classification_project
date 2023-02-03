@@ -88,3 +88,7 @@ To set up a clear list of actions for the company, it is now worth performing a 
 After these features, we can also see from the dataset that specific area codes and states have a higher influence than others. While it might be worth investigating this aspect, it is worth having caution what actions can be made around this discovery.
 
 
+## For reference
+Please find a link to the [presentation here](https://github.com/db495/Customer_churn_classification_project/blob/main/phase_3_presentation.pdf)
+
+You can find a link to the full notebook for my [model here](https://github.com/db495/Customer_churn_classification_project/blob/main/telco_churn_model.ipynb)
